@@ -26,6 +26,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.FilmtypesController",
+    "Method": "GetAllTypeWithMovies",
+    "RelativePath": "api/Filmtypes/feladat11",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.MoviesController",
     "Method": "GetAllMovies",
     "RelativePath": "api/Movies/feladat10",
