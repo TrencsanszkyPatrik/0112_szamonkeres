@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrencsánszkyP_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11d8a5183914a2fd8e2adeeca42875a8a1ab94f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrencsánszkyP_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrencsánszkyP_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,6 @@
 
+using System.Text.Json.Serialization;
+
 namespace TrencsánszkyP_backend
 {
     public class Program
@@ -8,6 +10,12 @@ namespace TrencsánszkyP_backend
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<Models.CinemadbContext>();
+            builder.Services.AddControllers().AddJsonOptions(x =>
+            {
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
