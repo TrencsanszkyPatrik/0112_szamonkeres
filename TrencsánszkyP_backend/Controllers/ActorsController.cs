@@ -18,8 +18,10 @@ namespace TrencsánszkyP_backend.Controllers
         [HttpGet("feladat9/{actor_name}")]
         public ActionResult GetActorWithBooks()
         {
-            var actorName = HttpContext.Request.RouteValues["actor_name"]?.ToString();
-            var actor = _context.Actors
+            try
+            {
+                var actorName = HttpContext.Request.RouteValues["actor_name"]?.ToString();
+                var actor = _context.Actors
                 .Where(a => a.ActorName == actorName)
                 .Select(a => new
                 {
@@ -35,15 +37,12 @@ namespace TrencsánszkyP_backend.Controllers
                     }).ToList()
                 })
                 .FirstOrDefault();
-
-            if (actor == null)
-            {
-                return NotFound(new {
-                    title = "Not found",
-                    status = 404
-                });
+                return Ok(actor);
             }
-            return Ok(actor);
+            catch (Exception ex)
+            {
+                return BadRequest(new { hiba = ex });
+            }
         }
 
         [HttpGet("feladat12")]
@@ -56,7 +55,7 @@ namespace TrencsánszkyP_backend.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(new {hiba = ex});
             }
         }
 

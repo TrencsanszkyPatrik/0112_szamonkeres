@@ -1,4 +1,5 @@
 
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json.Serialization;
 
 namespace TrencsánszkyP_backend
@@ -7,7 +8,14 @@ namespace TrencsánszkyP_backend
     {
         public static void Main(string[] args)
         {
+
+
+
             var builder = WebApplication.CreateBuilder(args);
+            
+            string uid = "FKB3F4FEA09CE43C";
+
+
 
             // Add services to the container.
 
@@ -21,6 +29,8 @@ namespace TrencsánszkyP_backend
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); });
+
 
             var app = builder.Build();
 
@@ -35,7 +45,7 @@ namespace TrencsánszkyP_backend
 
             app.UseAuthorization();
 
-
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.MapControllers();
 
             app.Run();

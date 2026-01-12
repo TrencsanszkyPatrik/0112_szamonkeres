@@ -18,8 +18,6 @@ namespace TrencsánszkyP_backend.Controllers
         [HttpGet("feladat10")]
         public ActionResult GetAllMovies()
         {
-
-            
             try 
             {
                 var movies = _context.Movies
@@ -39,9 +37,7 @@ namespace TrencsánszkyP_backend.Controllers
             {
                 return BadRequest(ex);
             }
-            
         }
-
 
     }
 }
