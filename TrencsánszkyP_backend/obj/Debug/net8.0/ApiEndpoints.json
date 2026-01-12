@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.ActorsController",
+    "Method": "GetActorWithBooks",
+    "RelativePath": "api/Actors/feladat9/{actor_name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "actor_name",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.MoviesController",
+    "Method": "GetAllMovies",
+    "RelativePath": "api/Movies/feladat10",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
