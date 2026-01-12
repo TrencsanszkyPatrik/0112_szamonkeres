@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.ActorsController",
+    "Method": "GetCountOfActors",
+    "RelativePath": "api/Actors/feladat12",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.ActorsController",
     "Method": "GetActorWithBooks",
     "RelativePath": "api/Actors/feladat9/{actor_name}",
     "HttpMethod": "GET",

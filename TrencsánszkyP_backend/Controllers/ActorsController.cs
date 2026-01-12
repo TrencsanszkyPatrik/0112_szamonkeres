@@ -46,6 +46,20 @@ namespace TrencsánszkyP_backend.Controllers
             return Ok(actor);
         }
 
+        [HttpGet("feladat12")]
+        public ActionResult GetCountOfActors()
+        {
+            try
+            {
+                var count = _context.Actors.Count();
+                return Ok("Színészek száma: " + count);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
 
 
     }

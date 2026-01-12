@@ -27,6 +27,18 @@
         }
       }
     },
+    "/api/Actors/feladat12": {
+      "get": {
+        "tags": [
+          "Actors"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Movies/feladat10": {
       "get": {
         "tags": [
