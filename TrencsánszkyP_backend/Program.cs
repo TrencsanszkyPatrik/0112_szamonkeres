@@ -12,8 +12,8 @@ namespace TrencsánszkyP_backend
 
 
             var builder = WebApplication.CreateBuilder(args);
-            
-            string uid = "FKB3F4FEA09CE43C";
+
+            builder.Configuration["UID"] = "FKB3F4FEA09CE43C";
 
 
 

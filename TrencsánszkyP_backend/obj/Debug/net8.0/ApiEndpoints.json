@@ -44,5 +44,26 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Trencs\u00E1nszkyP_backend.Controllers.MoviesController",
+    "Method": "AddMovie",
+    "RelativePath": "api/Movies/feladat13",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "m",
+        "Type": "Trencs\u00E1nszkyP_backend.Models.AddNewDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "uid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -8,12 +8,15 @@ namespace TrencsánszkyP_backend.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-
+        private readonly IConfiguration _configuration;
         private readonly CinemadbContext _context;
-        public MoviesController(CinemadbContext context)
+        public MoviesController(CinemadbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
+
+
 
         [HttpGet("feladat10")]
         public ActionResult GetAllMovies()
@@ -35,9 +38,45 @@ namespace TrencsánszkyP_backend.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(new
+                {
+                    hiba = ex.Message
+                });
             }
         }
 
+        [HttpPost("feladat13")]
+        public IActionResult AddMovie([FromBody] AddNewDto m, [FromQuery] string uid)
+        {
+            try
+            {
+                var UID = _configuration["UID"];
+
+                if (uid != UID)
+                    return Unauthorized("Nincs jogosultság.");
+
+                
+                var newMovie = new Movie
+                {
+                    Title = m.Title,
+                    ReleaseDate = m.ReleaseDate,
+                    ActorId = m.ActorId,
+                    FilmTypeId = m.FilmTypeId
+                };
+
+                _context.Movies.Add(newMovie);
+                _context.SaveChanges();
+
+                return StatusCode(201, new { message = "Film sikeresen hozzáadva."});
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    hiba = ex.Message
+                });
+            }
+        }
+
+        }
     }
-}
